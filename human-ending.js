@@ -7,7 +7,7 @@ css.textContent=`
 #human-ending-result.visible{opacity:1;pointer-events:auto}
 #human-ending-result .hint{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-weight:700;letter-spacing:.22em;font-size:clamp(11px,1.2vw,22px);opacity:.5;font-style:normal}
 #human-ending-result .heading{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-style:normal;font-weight:800;font-size:clamp(70px,12vw,220px);letter-spacing:.03em;line-height:1.12;transform:skew(-5deg)}
-#human-ending-result .name{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:clamp(18px,2.6vw,48px);letter-spacing:.1em;font-weight:800}
+#human-ending-result .name{font-family:'Barlow Condensed','Roboto Condensed','Arial Narrow',sans-serif;font-size:clamp(18px,2.6vw,48px);letter-spacing:.1em;font-weight:800;transform:skew(-5deg)}
 #human-ending-result .verify{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-style:normal;color:#97a885;font-size:clamp(12px,1.2vw,24px);letter-spacing:.12em;font-weight:700}
 #human-ending-result .line{width:min(50vw,650px);height:1px;background:#675d53;margin:3vh 0}
 #human-ending-result .amount{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-style:normal;color:#a4b791;font-size:clamp(45px,6vw,112px);transform:skew(-5deg);font-weight:800;opacity:0;transition:opacity 1s ease}
@@ -29,7 +29,7 @@ document.addEventListener('click',function(ev){
  const notice=document.getElementById('judge-notice');if(notice)notice.textContent='';
  dialogue.forEach(([who,msg],i)=>window.setTimeout(()=>appendMessage(who,msg),650+i*1250));
  window.setTimeout(()=>fade.style.opacity='1',4400);
- window.setTimeout(()=>result.classList.add('visible'),11500);
- window.setTimeout(()=>result.querySelector('.amount').classList.add('show'),12500);
+ window.setTimeout(()=>result.classList.add('visible'),12600);
+ window.setTimeout(()=>result.querySelector('.amount').classList.add('show'),13800);
 },true);
 })();
