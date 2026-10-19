@@ -1,0 +1,38 @@
+name: Install HUMAN ending
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'human-ending.js'
+      - '.github/workflows/install-human-ending.yml'
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Insert HUMAN animation script
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          marker='<script src="./human-ending.js"></script>'
+          if marker not in s:
+              if '</body>' not in s:
+                  raise SystemExit("Cannot find HTML body closing tag")
+              s=s.replace('</body>', marker+'\n</body>',1)
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit result when changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Load HUMAN ending animation in game"
+            git push
+          fi
