@@ -92,17 +92,17 @@ body{display:flex;flex-direction:column;justify-content:center;align-items:cente
 .check-square{flex:none;display:flex;align-items:center;justify-content:center;width:16%;aspect-ratio:1;border:2px solid #3a261f;border-radius:1px;background:transparent;color:#3a261f;cursor:pointer;padding:0;position:relative;touch-action:manipulation;overflow:visible}
 .check-square:hover{background:#eedccd60}.check-square:focus-visible{outline:2px solid #6c9dcc;outline-offset:2px}.check-square[data-checked="true"]::before{content:'✓';position:absolute;font-family:'Arial Black','Arial',sans-serif;font-weight:900;font-size:8.8cqw;line-height:1;color:#2f1f19;transform:translate(2%,-9%) scale(1.28,1.18);text-shadow:.035em .035em 0 #2f1f19,-.035em -.035em 0 #2f1f19}
 .check-text{font-size:4.35cqw;font-weight:800;letter-spacing:.01em;line-height:1.02;white-space:nowrap}
-.panel-swap{position:absolute;top:33.3%;width:3.5%;height:9.4%;z-index:16;border:0;background:transparent;color:#493128;font-size:0;display:grid;place-items:center;padding:0;cursor:pointer;filter:none;border-radius:0;}
-.panel-swap::before{content:"";display:block;width:72%;height:78%;background:#ead3b6;clip-path:polygon(0 0,100% 50%,0 100%);filter:drop-shadow(0 1px 1px #2b1b17);}
-#game[data-panel="profile"] .panel-swap{left:57.1%}
-#game[data-panel="check"] .panel-swap{left:13.2%}
-#game[data-panel="check"] .panel-swap::before{clip-path:polygon(100% 0,0 50%,100% 100%)}
+.panel-nav{position:absolute;top:33.3%;width:3.5%;height:9.4%;z-index:16;border:0;background:transparent;color:#493128;font-size:0;display:grid;place-items:center;padding:0;cursor:pointer;filter:none;border-radius:0;}
+.panel-nav::before{content:"";display:block;width:72%;height:78%;background:#ead3b6;filter:drop-shadow(0 1px 1px #2b1b17);}
+.panel-nav.prev{left:13.2%}.panel-nav.prev::before{clip-path:polygon(100% 0,0 50%,100% 100%)}
+.panel-nav.next{left:57.1%}.panel-nav.next::before{clip-path:polygon(0 0,100% 50%,0 100%)}
+#game[data-panel="profile"] .panel-nav.prev,#game[data-panel="judge"] .panel-nav.next{display:none}
 .profile-panel{display:none;position:absolute;left:15.9%;top:10.1%;width:40.9%;height:55.2%;z-index:6;container-type:inline-size;color:#35231c;background:#fcf8f0;border:5px solid #fcf8f0;outline:2px solid #412b23;outline-offset:-13px;border-radius:1px;box-shadow:0 0 0 3px #fcf8f0;padding:2.8% 2.8% 2.9%;font-family:'Barlow Condensed','Roboto Condensed','Arial Narrow',sans-serif}
 .profile-inner{display:grid;grid-template-columns:39% 1fr;gap:4.4%;height:100%}
 .profile-portrait{border:2px solid var(--choc);background:#f4efe7;display:flex;align-items:center;justify-content:center;padding:1.6%}.profile-portrait img{width:100%;height:100%;object-fit:cover;display:block}
 .profile-fields{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));gap:3.4%}
 .pf{position:relative;border:2px solid var(--choc);background:#fffdf8;padding:0 5%;display:flex;align-items:center}.pf .label{position:absolute;left:4.2%;top:-.9em;background:#fffdf8;padding:0 .28em;font-size:3.2cqw;font-weight:800;line-height:1;letter-spacing:.03em}.pf .value{font-size:5.15cqw;font-weight:800;line-height:1.04;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pf .value.small{font-size:4.15cqw}.pf .value.medium{font-size:4.55cqw}
-@media(max-width:650px){body{gap:11px;padding:12px 9px;justify-content:center}.brand .sub,.stage-readout{display:none}#board-wrap{width:100%;}.question{width:clamp(25px,6.3vw,45px);height:clamp(25px,6.3vw,45px);padding:5px;border-radius:8px}.question::after{border-radius:8px}.bubble{min-height:68px;padding:12px;font-size:9px;width:87%;max-width:87%}.bubble .who{font-size:.74em;margin-bottom:7px}.conversation{left:60%;top:5%;width:31%;gap:6px}.below{gap:9px}.step{font-size:10px}.key{display:none}.checklist-panel,.profile-panel{border-width:1.5px;outline-width:1px;outline-offset:-5px;border-radius:2px}.check-square{border-width:1px}.profile-portrait,.pf{border-width:1px}.panel-swap{width:4.5%;height:12%;font-size:0}.book-pop{left:4%;bottom:21%;min-width:112px;padding:8px 10px}.book-pop .tt{font-size:22px}.book-pop .tx{font-size:13px}}
+@media(max-width:650px){body{gap:11px;padding:12px 9px;justify-content:center}.brand .sub,.stage-readout{display:none}#board-wrap{width:100%;}.question{width:clamp(25px,6.3vw,45px);height:clamp(25px,6.3vw,45px);padding:5px;border-radius:8px}.question::after{border-radius:8px}.bubble{min-height:68px;padding:12px;font-size:9px;width:87%;max-width:87%}.bubble .who{font-size:.74em;margin-bottom:7px}.conversation{left:60%;top:5%;width:31%;gap:6px}.below{gap:9px}.step{font-size:10px}.key{display:none}.checklist-panel,.profile-panel{border-width:1.5px;outline-width:1px;outline-offset:-5px;border-radius:2px}.check-square{border-width:1px}.profile-portrait,.pf{border-width:1px}.panel-nav{width:4.5%;height:12%;font-size:0}.book-pop{left:4%;bottom:21%;min-width:112px;padding:8px 10px}.book-pop .tt{font-size:22px}.book-pop .tx{font-size:13px}}
 @media (max-height:600px) and (min-aspect-ratio: 3/2){body{padding:0;gap:0;overflow:hidden}.top,.below{display:none}#board-wrap{width:min(100vw,calc(100dvh * 1845 / 852));height:auto}#game{border-radius:0;box-shadow:none}}
 
 /* Attached CAPTCHA graphic remains inside the ordinary speech bubble. */
@@ -122,7 +122,6 @@ body{display:flex;flex-direction:column;justify-content:center;align-items:cente
 .judge-button:focus-visible{outline:3px solid #fff5d3;outline-offset:0}
 .judge-notice{position:absolute;inset:auto 4% 3% 4%;padding:4px 7px;background:rgba(20,21,23,.88);color:#fff7e6;border-radius:3px;font-size:clamp(9px,1vw,15px);text-align:center;pointer-events:none;display:none}
 .judgment-panel[data-selected] .judge-notice{display:block}
-#game[data-panel="judge"] .panel-swap{left:57.1%}
 </style>
 </head>
 <body>
@@ -189,7 +188,8 @@ body{display:flex;flex-direction:column;justify-content:center;align-items:cente
       <div class="judge-notice" id="judge-notice" role="status"></div>
     </section>
 
-    <button class="panel-swap" id="panel-swap" type="button" aria-label="チェックリストへ進む">▶</button>
+    <button class="panel-nav prev" id="panel-prev" type="button" aria-label="前のページへ戻る">◀</button>
+    <button class="panel-nav next" id="panel-next" type="button" aria-label="次のページへ進む">▶</button>
 
     <section class="menu" id="menu" aria-hidden="true"><div class="options" id="options"></div></section>
 
@@ -326,13 +326,17 @@ const checkPanel=document.getElementById('checklist-panel');
 const judgmentPanel=document.getElementById('judgment-panel');
 const judgeNotice=document.getElementById('judge-notice');
 judgmentPanel.querySelectorAll('.judge-button').forEach(btn=>btn.addEventListener('click',ev=>{ev.stopPropagation();const choice=btn.dataset.judgment;judgmentPanel.dataset.selected=choice;judgeNotice.textContent=choice==='ai'?'AIを選択しました（結果処理は未実装）':'HUMANを選択しました（結果処理は未実装）';}));
-const panelSwap=document.getElementById('panel-swap');
-panelSwap.addEventListener('click',ev=>{ev.stopPropagation();state.panel=state.panel==='profile'?'check':state.panel==='check'?'judge':'profile';render();});
+const panelPrev=document.getElementById('panel-prev');
+const panelNext=document.getElementById('panel-next');
+panelPrev.addEventListener('click',ev=>{ev.stopPropagation();state.panel=state.panel==='judge'?'check':'profile';render();});
+panelNext.addEventListener('click',ev=>{ev.stopPropagation();state.panel=state.panel==='profile'?'check':'judge';render();});
 document.querySelectorAll('.check-square').forEach(b=>{b.addEventListener('click',ev=>{ev.stopPropagation();const idx=Number(b.dataset.index);state.checks[idx]=!state.checks[idx];b.dataset.checked=String(state.checks[idx]);b.setAttribute('aria-pressed',String(state.checks[idx]));});});
 document.querySelectorAll('.book-btn').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();const key=btn.dataset.book;state.book=state.book===key?'none':key;render();});});
 function render(){
   g.dataset.call=state.call?'on':'off';g.dataset.menu=state.menu?'on':state.talk?'none':'off';g.dataset.talk=state.talk?'on':'off';g.dataset.panel=state.panel;g.dataset.book=state.book;
-  document.getElementById('profile-panel').setAttribute('aria-hidden',String(state.panel!=='profile'));checkPanel.setAttribute('aria-hidden',String(state.panel!=='check'));judgmentPanel.setAttribute('aria-hidden',String(state.panel!=='judge'));panelSwap.textContent='▶';panelSwap.setAttribute('aria-label',state.panel==='profile'?'チェックリストへ進む':state.panel==='check'?'最終判定へ進む':'プロフィールへ戻る');
+  document.getElementById('profile-panel').setAttribute('aria-hidden',String(state.panel!=='profile'));checkPanel.setAttribute('aria-hidden',String(state.panel!=='check'));judgmentPanel.setAttribute('aria-hidden',String(state.panel!=='judge'));
+  panelPrev.setAttribute('aria-label',state.panel==='judge'?'チェックリストへ戻る':'プロフィールへ戻る');
+  panelNext.setAttribute('aria-label',state.panel==='profile'?'チェックリストへ進む':'最終判定へ進む');
   menu.setAttribute('aria-hidden',String(!state.menu));conversation.setAttribute('aria-hidden',String(!state.talk));
   renderConversation();
   phone.setAttribute('aria-label',!state.call?'受話器を取る':state.menu?'質問を閉じる':'質問を開く');
