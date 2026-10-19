@@ -4,10 +4,11 @@
 
 ## GitHub Pages
 
-このリポジトリの Settings → Pages → Build and deployment で `Deploy from a branch` を選択し、`main` ブランチの `/(root)` を選んで保存してください。
+このゲームは GitHub Pages で公開しています。
 
-サイトは通常 `https://<GitHubユーザー名>.github.io/<リポジトリ名>/` から開けます。
+- 公開URL: https://hasita-ryu.github.io/game_02/
+- 公開元: `main` ブランチの `/(root)`
 
 ## 更新
 
-修正版の `index.html` を上書きすると、GitHub Pagesに自動で反映されます。
+`main` ブランチの `index.html` を更新して GitHub へ push すると、同じ公開URLに最新版が自動で反映されます。反映には数分かかる場合があります。
